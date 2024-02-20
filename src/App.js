@@ -1,6 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
-import Navbar  from './componenets/Navbar';
+import Navbar from './componenets/Navbar';
 import TextFrom from './componenets/TextForm';
 import About from './componenets/About';
 import { useCallback, useState } from 'react';
@@ -14,7 +13,7 @@ function App() {
   const showAlert = useCallback((message, type) => {
     setAlert({
       msg: message,
-      type: type  
+      type: type
     })
     setTimeout(() => {
       setAlert(null)
@@ -39,12 +38,12 @@ function App() {
   return (
     <div>
       <Router>
-        <Navbar title = "TextUtils" mode = {mode} toggleMode={toggleMode}/>
-        <Alert alert={alert}/>
+        <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
+        <Alert alert={alert} />
         <div className="container my-3">
           <Routes>
-            <Route exact path = "/about" element ={<About mode = {mode}/>}/>
-            <Route path="/" element={<TextFrom heading= "Enter the text to analyze" mode={mode} showAlert={showAlert}/>}/>
+            <Route exact path="/about" element={<About mode={mode} />} />
+            <Route path="/" element={<TextFrom heading="Enter the text to analyze" mode={mode} showAlert={showAlert} />} />
           </Routes>
         </div>
       </Router>
